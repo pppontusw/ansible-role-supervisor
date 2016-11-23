@@ -1,4 +1,4 @@
-- name: install node
+- name: install supervisor
   yum: 
     name: "{{item}}"
     state: present

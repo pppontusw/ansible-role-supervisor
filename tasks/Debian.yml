@@ -1,4 +1,4 @@
-- name: install node
+- name: install supervisor
   apt: 
     name: "{{item}}"
     state: present
