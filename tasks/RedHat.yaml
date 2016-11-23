@@ -1,0 +1,7 @@
+- name: install node
+  yum: 
+    name: "{{item}}"
+    state: present
+  with_items: 
+    - supervisor
+  become: yes

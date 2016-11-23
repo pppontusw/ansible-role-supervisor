@@ -1,0 +1,10 @@
+[program:{{app_name}}]
+command={{supervisor_command}}
+autostart=true
+autorestart=true
+stdout_logfile={{supervisor_log_path}}/app.log
+stderr_logfile={{supervisor_log_path}}/error.log
+user={{supervisor_user}}
+{% for variable in env_variables %}
+environment={{variable}}
+{% endfor %}

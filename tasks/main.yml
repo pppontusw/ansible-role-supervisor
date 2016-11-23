@@ -1,0 +1,22 @@
+- include_vars: "{{ ansible_os_family }}.yml"
+
+- include: "{{ ansible_os_family }}.yml"
+
+- name: create log path
+  file:
+    path: "{{supervisor_log_path}}"
+    state: directory
+    owner: "{{supervisor_user}}"
+    group: "{{supervisor_user}}"
+  become: yes
+
+- name: configure supervisord
+  template:
+    src: supervisor.conf.j2
+    dest: "{{supervisor_path}}/{{supervisor_conf_name}}"
+  notify: restart supervisor
+  become: yes
+
+- name: enable supervisord
+  shell: systemctl enable "{{supervisor_name}}" 
+  become: yes
