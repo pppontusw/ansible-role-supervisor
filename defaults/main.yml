@@ -5,3 +5,4 @@ env_variables:
   - NODE_ENV=PRODUCTION
   - NODE_PORT=5000
 supervisor_log_path: /var/log/supervisorapp
+supervisor_directory: /opt/supervisor

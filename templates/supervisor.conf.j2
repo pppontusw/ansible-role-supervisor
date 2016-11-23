@@ -5,6 +5,7 @@ autorestart=true
 stdout_logfile={{supervisor_log_path}}/app.log
 stderr_logfile={{supervisor_log_path}}/error.log
 user={{supervisor_user}}
+directory={{supervisor_directory}}
 {% for variable in env_variables %}
 environment={{variable}}
 {% endfor %}
